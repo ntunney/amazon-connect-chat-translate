@@ -215,17 +215,17 @@ const Ccp = () => {
             <PanelGroup direction="horizontal">
                 <Panel>
                     <PanelGroup direction="vertical">
-                        <Panel style="background-color: rgb(15, 27, 42)">
+                        <Panel style="background-color: #0f1b2a">
                             Available
                         </Panel>
-                        <PanelResizeHandle style="background-color:rgb(60, 69, 79); height: 10px" />
+                        <PanelResizeHandle style="background-color: #3c454f; height: 10px" />
                         <Panel>
                             {/* CCP window will load here */}
                             <div id="ccp-container"></div>
                         </Panel>
                     </PanelGroup>
                 </Panel>
-                <PanelResizeHandle style="background-color:rgb(60, 69, 79); width: 10px" />
+                <PanelResizeHandle style="background-color: #0f1b2a; width: 10px" />
                 <Panel>
                     {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
                     <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>
