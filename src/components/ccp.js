@@ -6,6 +6,7 @@ import Chatroom from './chatroom';
 import translateText from './translate'
 import detectText from './detectText'
 import { addChat, setLanguageTranslate, clearChat, useGlobalState, setCurrentContactId } from '../store/state';
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 Amplify.configure(awsconfig);
 
@@ -211,10 +212,25 @@ const Ccp = () => {
         <main>
           <Grid columns='equal' stackable padded>
           <Grid.Row>
-            {/* CCP window will load here */}
-            <div id="ccp-container"></div>
-            {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
-            <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div> 
+            <PanelGroup direction="horizontal">
+                <Panel>
+                    <PanelGroup direction="vertical">
+                        <Panel>
+                            Available
+                        </Panel>
+                        <PanelResizeHandle />
+                        <Panel>
+                            {/* CCP window will load here */}
+                            <div id="ccp-container"></div>
+                        </Panel>
+                    </PanelGroup>
+                </Panel>
+                <PanelResizeHandle />
+                <Panel>
+                    {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
+                    <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>
+                </Panel>
+                </PanelGroup> 
             </Grid.Row>
           </Grid>
         </main>
