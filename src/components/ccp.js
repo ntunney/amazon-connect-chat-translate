@@ -219,14 +219,14 @@ const Ccp = () => {
                         <Panel className="stats-background">
                             Available
                         </Panel>
-                        <PanelResizeHandle className="drag-handle" />
+                        <PanelResizeHandle className="drag-handle-horiz" />
                         <Panel>
                             {/* CCP window will load here */}
                             <div id="ccp-container"></div>
                         </Panel>
                     </PanelGroup>
                 </Panel>
-                <PanelResizeHandle className="drag-handle" />
+                <PanelResizeHandle className="drag-handle-vert" />
                 <Panel>
                     {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
                     <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>

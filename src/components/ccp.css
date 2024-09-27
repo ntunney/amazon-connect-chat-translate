@@ -1,7 +1,11 @@
 
-.drag-handle {
+.drag-handle-horiz {
     background-color: #3c454f; 
     height: 10px;
+}
+.drag-handle-vert {
+    background-color: #3c454f; 
+    width: 10px;
 }
 .status-background{
     background-color: #0f1b2a;
