@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid } from 'semantic-ui-react';
 import  { Amplify }  from 'aws-amplify';
 import awsconfig from '../aws-exports';
+import './ccp.css';
 import Chatroom from './chatroom';
 import translateText from './translate'
 import detectText from './detectText'
@@ -215,17 +216,17 @@ const Ccp = () => {
             <PanelGroup direction="horizontal">
                 <Panel>
                     <PanelGroup direction="vertical">
-                        <Panel style="background-color: #0f1b2a">
+                        <Panel className="stats-background">
                             Available
                         </Panel>
-                        <PanelResizeHandle style="background-color: #3c454f; height: 10px" />
+                        <PanelResizeHandle className="drag-handle" />
                         <Panel>
                             {/* CCP window will load here */}
                             <div id="ccp-container"></div>
                         </Panel>
                     </PanelGroup>
                 </Panel>
-                <PanelResizeHandle style="background-color: #0f1b2a; width: 10px" />
+                <PanelResizeHandle className="drag-handle" />
                 <Panel>
                     {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
                     <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>
