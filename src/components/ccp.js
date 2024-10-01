@@ -208,7 +208,7 @@ const Ccp = () => {
 
 
     return (
-        <main style="overflow: hidden;">
+        <main>
             <Grid columns='equal' stackable padded>
                 <Grid.Row>
                     {/* CCP window will load here */}
