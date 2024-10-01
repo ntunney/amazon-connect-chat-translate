@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import  { Amplify }  from 'aws-amplify';
 import awsconfig from '../aws-exports';
 import './ccp.css';
