@@ -210,30 +210,11 @@ const Ccp = () => {
 
 
     return (
-        <main>
-          <Grid columns='equal' stackable padded>
-          <Grid.Row>
-            <PanelGroup direction="horizontal">
-                <Panel>
-                    <PanelGroup direction="vertical">
-                        <Panel className="stats-background">
-                            Available
-                        </Panel>
-                        <PanelResizeHandle className="drag-handle-horiz" />
-                        <Panel>
-                            {/* CCP window will load here */}
-                            <div id="ccp-container"></div>
-                        </Panel>
-                    </PanelGroup>
-                </Panel>
-                <PanelResizeHandle className="drag-handle-vert" />
-                <Panel>
-                    {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
-                    <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>
-                </Panel>
-                </PanelGroup> 
-            </Grid.Row>
-          </Grid>
+        <main style="overflow: hidden;">
+            {/* CCP window will load here */}
+            <div id="ccp-container" className="ccp-hidden"></div>
+            {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
+            <div id="chatroom" ><Chatroom session={agentChatSessionState}/> </div>
         </main>
     );
 };
