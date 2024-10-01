@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from 'semantic-ui-react';
+// import { Grid } from 'semantic-ui-react';
 import  { Amplify }  from 'aws-amplify';
 import awsconfig from '../aws-exports';
 import './ccp.css';
@@ -7,8 +7,6 @@ import Chatroom from './chatroom';
 import translateText from './translate'
 import detectText from './detectText'
 import { addChat, setLanguageTranslate, clearChat, useGlobalState, setCurrentContactId } from '../store/state';
-import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-
 Amplify.configure(awsconfig);
 
 const Ccp = () => {
@@ -210,7 +208,7 @@ const Ccp = () => {
 
 
     return (
-        <main style="overflow: hidden;">
+        <main>
             {/* CCP window will load here */}
             <div id="ccp-container" className="ccp-hidden"></div>
             {/* Translate window will laod here. We pass the agent state to be able to use this to push messages to CCP */}
