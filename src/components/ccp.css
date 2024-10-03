@@ -11,13 +11,20 @@
 .translate-container {
     z-index: 50;
 }
-.dVxtLJ {
-    background: #fff !important;
-}
+
 .chatroom {
     border-radius: 0 !important;
 }
 
 .ccp-container iframe {
     border: 0;
+}
+
+/* hide the tasks button or when the screen is compressed, it is partially visible */
+.hCTPMj {
+    display: none !important;
+}
+/* background for the button container */
+.dVxtLJ {
+    background: #fff !important;
 }
