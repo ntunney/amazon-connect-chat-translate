@@ -1,19 +1,23 @@
-
-.drag-handle-horiz {
-    background-color: #3c454f; 
-    height: 10px;
-}
-.drag-handle-vert {
-    background-color: #3c454f; 
-    width: 10px;
-}
 .status-background{
     background-color: #0f1b2a;
 }
 .ccp-hidden {
+    z-index: 1;
     position: absolute;
-    height: 100px !important;
-    width: 100px !important;
-    right: -150px;
-    top: -150px ;
+    right: 0px;
+    top: 93px;
+    width: 350px !important;
+}
+.translate-container {
+    z-index: 50;
+}
+.dVxtLJ {
+    background: #fff !important;
+}
+.chatroom {
+    border-radius: 0 !important;
+}
+
+.ccp-container iframe {
+    border: 0;
 }
