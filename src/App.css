@@ -10,4 +10,11 @@
 background: #F25F5C !important;
 }
 
-
+/* hide the tasks and number pad buttons or when the screen is compressed, they are partially visible */
+.lhnIqY, .hCTPMj {
+  display: none !important;
+}
+/* background for the button container */
+.dVxtLJ {
+  background: #fff !important;
+}
