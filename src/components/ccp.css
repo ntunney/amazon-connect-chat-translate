@@ -5,7 +5,7 @@
     z-index: 1;
     position: absolute;
     right: 0px;
-    top: 93px;
+    top: 79px;
     width: 350px !important;
 }
 .translate-container {
@@ -16,11 +16,11 @@
     border-radius: 0 !important;
 }
 
-.ccp-container iframe {
+.ccp-container > iframe {
     border: 0;
 }
 
-/* hide the tasks button or when the screen is compressed, it is partially visible */
+/* hide the tasks and number pad buttons or when the screen is compressed, they are partially visible */
 .hCTPMj {
     display: none !important;
 }
