@@ -16,8 +16,8 @@
     border-radius: 0 !important;
 }
 
-.ccp-container > iframe {
-    border: 0;
+iframe {
+    border: 0 !important;
 }
 
 /* hide the tasks and number pad buttons or when the screen is compressed, they are partially visible */
