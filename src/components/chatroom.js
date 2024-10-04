@@ -26,6 +26,10 @@ const Chatroom = (props) => {
         
     }
 
+    function scrolltobot(target) {
+        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });  
+    }
+
     const sendMessage = async(session, content) => {
         const awsSdkResponse = await session.sendMessage({
             contentType: "text/plain",
@@ -44,11 +48,12 @@ const Chatroom = (props) => {
                 const { currentTarget: target } = event;
                 target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
             }); */
-            const observer = new MutationObserver(mutationList =>  
-                mutationList.filter(m => m.type === 'childList').forEach(m => {  
-                    m.addedNodes.forEach(doSomething);  
-                }));  
-              observer.observe(messageEl.current,{childList: true, subtree: true});
+            const observer = new MutationObserver(
+                ([target]) => {
+                    scrolltobot(target);
+                }
+            );
+            observer.observe(messageEl.current, {childList: true, subtree: true});
         }
         // this ensure that the input box has the focus on load and after each entry
         input.current.focus();
