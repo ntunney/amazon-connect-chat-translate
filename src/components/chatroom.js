@@ -39,10 +39,16 @@ const Chatroom = (props) => {
 
         // this ensures that the chat window will auto scoll to ensure the more recent message is in view
         if (messageEl) {
+            /* DOMNodeInserted deprecated July 2024 ---
             messageEl.current.addEventListener('DOMNodeInserted', event => {
                 const { currentTarget: target } = event;
                 target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
-            });
+            }); */
+            const observer = new MutationObserver(mutationList =>  
+                mutationList.filter(m => m.type === 'childList').forEach(m => {  
+                    m.addedNodes.forEach(doSomething);  
+                }));  
+              observer.observe(messageEl.current,{childList: true, subtree: true});
         }
         // this ensure that the input box has the focus on load and after each entry
         input.current.focus();
