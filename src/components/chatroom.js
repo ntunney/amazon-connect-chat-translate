@@ -26,10 +26,6 @@ const Chatroom = (props) => {
         
     }
 
-    function scrolltobot(target) {
-        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });  
-    }
-
     const sendMessage = async(session, content) => {
         const awsSdkResponse = await session.sendMessage({
             contentType: "text/plain",
@@ -43,17 +39,10 @@ const Chatroom = (props) => {
 
         // this ensures that the chat window will auto scoll to ensure the more recent message is in view
         if (messageEl) {
-            /* DOMNodeInserted deprecated July 2024 ---
             messageEl.current.addEventListener('DOMNodeInserted', event => {
                 const { currentTarget: target } = event;
                 target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
-            }); */
-            const observer = new MutationObserver(
-                ([target]) => {
-                    scrolltobot(target);
-                }
-            );
-            observer.observe(messageEl.current, {childList: true, subtree: true});
+            });
         }
         // this ensure that the input box has the focus on load and after each entry
         input.current.focus();
